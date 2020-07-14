@@ -1,0 +1,15 @@
+#card-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+#display-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.button-container {
+  display: flex;
+  justify-content: space-around;
+}
