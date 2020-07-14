@@ -50,7 +50,7 @@ function createCard(input) {
 }
 //function to search for movies
 function searchMovies(keyword) {
-  fetch(`http://www.omdbapi.com/?apikey=42af299e&s=${keyword}`)
+  fetch(`https://www.omdbapi.com/?apikey=42af299e&s=${keyword}`)
     .then((response) => response.json())
     .then((data) =>
       data.Search.forEach((movie) => {
@@ -63,7 +63,7 @@ function searchMovies(keyword) {
 //function to search for gifs
 function searchGifs(keyword) {
   fetch(
-    `http://api.giphy.com/v1/gifs/search?api_key=T7b1gmyVbcOT1QoeGDPwXZEup4PqmYoo&q=${keyword}`
+    `https://api.giphy.com/v1/gifs/search?api_key=T7b1gmyVbcOT1QoeGDPwXZEup4PqmYoo&q=${keyword}`
   )
     .then((response) => response.json())
     .then((gif) => {
