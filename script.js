@@ -30,7 +30,7 @@ function createCard(input) {
   movieBtn.addEventListener("click", (event) => {
     let content = document.getElementById("display-section");
     content.innerHTML = "";
-    searchMovies(event.target.parentNode.firstChild.innerText);
+    searchMovies(event.target.parentNode.parentNode.firstChild.innerText);
   });
 
   let gifBtn = document.createElement("button");
@@ -39,7 +39,7 @@ function createCard(input) {
   gifBtn.addEventListener("click", (event) => {
     let content = document.getElementById("display-section");
     content.innerHTML = "";
-    searchGifs(event.target.parentNode.firstChild.innerText);
+    searchGifs(event.target.parentNode.parentNode.firstChild.innerText);
   });
 
   btnContainer.append(movieBtn, gifBtn);
@@ -50,7 +50,7 @@ function createCard(input) {
 }
 //function to search for movies
 function searchMovies(keyword) {
-  fetch(`https://www.omdbapi.com/?apikey=42af299e&s=${keyword}`)
+  fetch(`https://www.omdbapi.com/?apikey=999de90c&s=${keyword}`)
     .then((response) => response.json())
     .then((data) =>
       data.Search.forEach((movie) => {
