@@ -5,6 +5,7 @@ submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
   let searchInput = document.getElementById("search-input").value;
   document.getElementById("card-section").appendChild(createCard(searchInput));
+  document.getElementById("search-input").value = "";
 });
 
 //function to create the card
