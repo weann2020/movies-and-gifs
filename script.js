@@ -4,8 +4,12 @@ let submitBtn = document.getElementById("submit_btn");
 submitBtn.addEventListener("click", (e) => {
   e.preventDefault();
   let searchInput = document.getElementById("search-input").value;
-  document.getElementById("card-section").appendChild(createCard(searchInput));
-  document.getElementById("search-input").value = "";
+  if (searchInput !== "") {
+    document
+      .getElementById("card-section")
+      .appendChild(createCard(searchInput));
+    document.getElementById("search-input").value = "";
+  }
 });
 
 //function to create the card
@@ -43,7 +47,14 @@ function createCard(input) {
     searchGifs(event.target.parentNode.parentNode.firstChild.innerText);
   });
 
-  btnContainer.append(movieBtn, gifBtn);
+  let rmvBtn = document.createElement("button");
+  rmvBtn.setAttribute("class", "btn btn-danger");
+  rmvBtn.innerText = "Remove";
+  rmvBtn.addEventListener("click", (event) => {
+    event.target.parentNode.parentNode.parentNode.remove();
+  });
+
+  btnContainer.append(movieBtn, gifBtn, rmvBtn);
   cardBody.append(cardTitle, btnContainer);
   card.appendChild(cardBody);
 
